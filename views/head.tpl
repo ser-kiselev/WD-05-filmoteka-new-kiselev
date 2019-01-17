@@ -37,14 +37,21 @@
 		</nav>
 
 		<?php if( isset($_COOKIE['user-name']) ) { ?>
-		<div class="mb-40" style="color: #616161; background: #ECEFF1; padding: 14px; border-radius: 3px;">		
+			<div class="mb-40" style="color: #616161; background: #ECEFF1; padding: 14px; border-radius: 3px;">		
 
-			<?php if( isset($_COOKIE['user-city']) ) { ?>
-				Привет, <?=$_COOKIE['user-name']?> из <?=$_COOKIE['user-city']?>!
-			<?php } else { ?>
-				Привет, <?=$_COOKIE['user-name']?>!
-			<?php } ?>
-		</div>
+				<?php if( isset($_COOKIE['user-city']) ) { ?>
+					Привет, <?=$_COOKIE['user-name']?> из <?=$_COOKIE['user-city']?>!
+				<?php } else { ?>
+					Привет, <?=$_COOKIE['user-name']?>!
+				<?php } ?>
+
+			</div>
+		<?php } ?>
+
+		<?php if ( isAdmin() ) { ?>
+			<div class="mb-40" style="color: #616161; background: #ECEFF1; padding: 14px; border-radius: 3px;">	
+				Привет, <?=$_SESSION['user']?>!
+			</div>
 		<?php } ?>
 				
 				
